@@ -97,20 +97,74 @@ h2 {
     align-items: center;
     font-size: 3em;
     background: #e9e9e9;
+    transform: rotateY(180deg);
     transition: 0.25s;
     border-radius: 10px;
 }
 
-.item::after
-{
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
     content: '';
     position: absolute;
     inset: 0;
     background: #085e6d;
     transition: 0.25;
+    backface-visibility: hidden;
     transform: rotateY(0deg);
     box-shadow: 15px 15px 30px #006e81cc,
         -15px -15px 30px #019bb6cc;
     transition: 0.2s ease-in-out;
     border-radius: 10px;
+}
+
+.boxOpen::after,
+.boxMatch:after {
+    transform: rotateY(180deg);
+}
+
+
+/* Estilo para el modal (fondo) */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* Centrado vertical y horizontal */
+    padding: 100px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 700px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+}
+
+/* Botón de cierre */
+.close {
+    color: #aaa;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #006e5c;
+    text-decoration: none;
+    cursor: pointer;
 }

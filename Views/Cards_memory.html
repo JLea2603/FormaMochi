@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartas de memoria</title>
     <link rel="stylesheet" type="text/css" href="../Styles/Style_card_game.css">
 </head>
+
 <body>
     <div class="container">
         <h2>Cartas de memoria</h2>
@@ -13,16 +15,96 @@
 
         </div>
         <button class="reset" onclick="window.location.reload();">Reiniciar Juego</button>
+
+        <div id="winModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>¡Felicidades!</p>
+                <p>¡Has ganado!</p>
+            </div>
+        </div>
     </div>
     <script>
-        const emojis = ["😁","😁","😎","😎","😡","😡","👻","👻","🙀","🙀","🦍","🦍","🐇","🐇","🐱","🐱"];
-        var shuf_emojis = emojis.sort(() => (Math.random() > .5) ? 2 : -1);
-        for( var i =0; i<emojis.length; i++){
-            let box = document.createElement('div')
+        const items = [
+            "../Images/pruebita.jpg", "../Images/pruebita.jpg",
+            "😎", "😎",
+            "😡", "😡",
+            "👻", "👻",
+            "🙀", "🙀",
+            "🦍", "🦍",
+            "🐇", "🐇",
+            "🐱", "🐱"
+        ];
+
+        // Mezcla los elementos
+        var shuffledItems = items.sort(() => (Math.random() > .5) ? 2 : -1);
+
+        for (var i = 0; i < items.length; i++) {
+            let box = document.createElement('div');
             box.className = 'item';
-            box.innerHTML = shuf_emojis[i]
+
+            // Verificar si el item es una imagen (si contiene '.jpg', '.png', etc.)
+            if (shuffledItems[i].includes('.jpg') || shuffledItems[i].includes('.png')) {
+                // Si es una imagen, crear una etiqueta <img>
+                let img = document.createElement('img');
+                img.src = shuffledItems[i];
+                img.alt = 'Imagen';
+                img.style.width = '100px';  // Ajusta el tamaño si es necesario
+                img.style.height = '100px';
+
+                // Insertar la imagen dentro del div
+                box.appendChild(img);
+            } else {
+                // Si es un emoji, agregar el emoji como texto
+                box.innerHTML = shuffledItems[i];
+            }
+
+            // Funcionalidad al hacer clic en el box
+            box.onclick = function () {
+                this.classList.add('boxOpen');
+                setTimeout(function () {
+                    if (document.querySelectorAll('.boxOpen').length > 1) {
+                        if (document.querySelectorAll('.boxOpen')[0].innerHTML ==
+                            document.querySelectorAll('.boxOpen')[1].innerHTML) {
+                            document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
+                            document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
+
+                            document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
+                            document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
+
+                            if (document.querySelectorAll('.boxMatch').length == items.length) {
+                                // Muestra el mensaje de ganar
+                                // Mostrar el modal al ganar
+                                var modal = document.getElementById("winModal");
+                                modal.style.display = "block";
+                            }
+                        } else {
+                            document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
+                            document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
+                        }
+                    }
+                }, 500);
+            };
+
+            // Añadir el box a la sección del juego
             document.querySelector('.game').appendChild(box);
+        }
+
+        // Cerrar el modal al hacer clic en la "x"
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            var modal = document.getElementById("winModal");
+            modal.style.display = "none";
+        }
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = function (event) {
+            var modal = document.getElementById("winModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
+
 </html>
