@@ -224,7 +224,7 @@ html {
 
 .content-banner h2 {
 	color: #fff;
-	font-size: 3.5rem;
+	font-size: 100px;
 	font-weight: 500;
 	line-height: 1.2;
 }
@@ -1075,3 +1075,10 @@ html {
 		font-size: 1.6rem;
 	}
 }
+@font-face {
+    font-family: mifuente2;
+    src: url('../Fuentes/Happy\ Paradise.otf');
+ }
+ h2{
+    font-family: mifuente2;
+ }
