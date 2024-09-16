@@ -1,35 +1,66 @@
  body {
-            width: 960px;
-            margin: 0 auto;
-            background-color: rgb(255, 255, 255);
-            background-image: linear-gradient(#00000000, #00000000),
-		url('https://marketplace.canva.com/EAFYxMletq8/1/0/1600w/canva-fondo-de-pantalla-figuras-abstractas-rosa-LIgGZSYmuXE.jpg');
-        }
+     width: 960px;
+     margin: 0 auto;
+     background-color: rgb(255, 255, 255);
+     background-image: linear-gradient(#00000000, #00000000),
+         url('https://marketplace.canva.com/EAFYxMletq8/1/0/1600w/canva-fondo-de-pantalla-figuras-abstractas-rosa-LIgGZSYmuXE.jpg');
+ }
 
-        h1 {
-            text-align: center;
-        }
+ h1 {
+     text-align: center;
+ }
 
-        #pantalla {
-            background: rgb(255, 255, 255);
-            border-radius: 20px;
-            border: solid 2px black;
-        }
+ #pantalla {
+    margin-top: 50px;
+     background: rgb(255, 255, 255);
+     border-radius: 20px;
+     border: solid 2px black;
+     margin-left: 70px;
+ }
 
-        #boton {
-            border-radius: 20px;
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-            text-align: center;
-            font-weight: bolder;
-            padding: 5px;
-            border: solid 2px black;
-        }
+ #boton {
+    background-color: rgb(225, 158, 238);
+    border-radius: 30px;
+    padding: 15px;
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    top: 380px; 
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición */
+ }
 
-        #boton:hover {
-            /* Estilo que se activa al pasar el puntero sobre el boton */
-            background-color: rgb(0, 0, 0);
-            font-size: 22px;
-            border: groove 4px rgba(7, 7, 7, 0.836);
-        }
+ #boton:hover {
+    background-color: rgba(223, 61, 255, 0.7); /* Color difuminado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+.reset {
+    background-color: rgb(225, 158, 238);
+    border-radius: 30px;
+    padding: 15px;
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    top: 240px; 
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición */
+}
+
+.reset:hover {
+    background-color: rgba(223, 61, 255, 0.7); /* Color difuminado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+ @font-face {
+    font-family: mifuente2;
+    src: url('../Fuentes/Happy\ Paradise.otf');
+ }
+ h2{
+    font-family: mifuente2;
+ }
+ @font-face {
+    font-family: mifuente;
+    src: url('../Fuentes/Anti\ Gravity\ Demo.ttf');
+ }
+ h1{
+    font-family: mifuente;
+ }
