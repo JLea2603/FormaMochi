@@ -301,3 +301,10 @@ window.onload = function () {
         }
     }
 }
+// Funcion para musica de fondo
+document.body.addEventListener('click', function () {
+    var audio = document.getElementById('background-music');
+    audio.play().catch(function (error) {
+        console.error('Error al intentar reproducir el audio:', error);
+    });
+});
