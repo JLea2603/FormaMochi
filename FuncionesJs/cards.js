@@ -2,6 +2,7 @@ const items = [
     "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
     "../Images/ahorcado0.png", "../Images/ahorcado1.png",
     "../Images/ahorcado2.png", "../Images/ahorcado3.png",
+    "../Images/ahorcado4.png", "../Images/ahorcado5.png",
     "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
 ];
 
@@ -12,6 +13,8 @@ const imagePairs = {
     "../Images/ahorcado1.png": "../Images/ahorcado0.png", // Par de imágenes 4 (inverso)
     "../Images/ahorcado2.png": "../Images/ahorcado3.png", // Par de imágenes 4 (inverso)
     "../Images/ahorcado3.png": "../Images/ahorcado2.png", // Par de imágenes 4 (inverso)
+    "../Images/ahorcado4.png": "../Images/ahorcado5.png", // Par de imágenes 4 (inverso)
+    "../Images/ahorcado5.png": "../Images/ahorcado4.png", // Par de imágenes 4 (inverso)
 };
 
 
