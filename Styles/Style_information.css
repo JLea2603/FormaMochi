@@ -1,0 +1,133 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: #085e6d83;
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+
+.containerInfo {
+    margin-top: 20px;
+    background: #ffffff65;
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+
+.containerInfo2 {
+    margin-top: 20px;
+    margin-bottom: 500px;
+    background: #bebebe63;
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+
+p {
+    font-size: 30px;
+    color: #000000;
+}
+
+li {
+    font-size: 30px;
+    color: #000000;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 100;
+}
+
+
+.reset {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: rgb(0, 44, 85);
+    border: 2px solid rgb(0, 44, 85);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.reset::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(0, 44, 85);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.reset:hover::before {
+    scale: 4;
+}
+
+.reset:hover {
+    color: #ffffff;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.reset:active {
+    scale: 1;
+}
+
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(0, 44, 85) 50%, rgba(23, 153, 240, 0.747) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
