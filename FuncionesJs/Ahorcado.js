@@ -136,7 +136,7 @@ function pistaFunction(palabra) {
             pista = "No hay pista aun xP";
     }
     // Pintamos la palabra en el canvas , en este ejemplo se pinta arriba a la izquierda //
-    ctx.fillStyle = "white";  // Aqui ponemos el color de la letra
+    ctx.fillStyle = "black";  // Aqui ponemos el color de la letra
     ctx.font = "bold 20px Arial";  // aqui ponemos el tipo y tamaño de la letra
     ctx.fillText(pista, 20, 15);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
 }

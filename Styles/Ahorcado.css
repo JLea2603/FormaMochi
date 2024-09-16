@@ -1,7 +1,9 @@
  body {
             width: 960px;
             margin: 0 auto;
-            background-color: rgb(117, 92, 255);
+            background-color: rgb(255, 255, 255);
+            background-image: linear-gradient(#00000000, #00000000),
+		url('https://marketplace.canva.com/EAFYxMletq8/1/0/1600w/canva-fondo-de-pantalla-figuras-abstractas-rosa-LIgGZSYmuXE.jpg');
         }
 
         h1 {
@@ -9,8 +11,9 @@
         }
 
         #pantalla {
-            background: rgb(68, 47, 255);
+            background: rgb(255, 255, 255);
             border-radius: 20px;
+            border: solid 2px black;
         }
 
         #boton {
