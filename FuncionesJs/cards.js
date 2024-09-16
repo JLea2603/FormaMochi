@@ -1,13 +1,65 @@
 const items = [
     "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
-    "../Images/pruebita.jpg", "../Images/pruebita2.jpg" // Asegúrate de tener pares de imágenes
+    "../Images/ahorcado0.png", "../Images/ahorcado1.png",
+    "../Images/ahorcado2.png", "../Images/ahorcado3.png",
+    "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
 ];
+
+const imagePairs = {
+    "../Images/pruebita.jpg": "../Images/pruebita2.jpg", // Par de imágenes 1
+    "../Images/pruebita2.jpg": "../Images/pruebita.jpg", // Par de imágenes 2 (inverso)
+    "../Images/ahorcado0.png": "../Images/ahorcado1.png", // Par de imágenes 3
+    "../Images/ahorcado1.png": "../Images/ahorcado0.png", // Par de imágenes 4 (inverso)
+    "../Images/ahorcado2.png": "../Images/ahorcado3.png", // Par de imágenes 4 (inverso)
+    "../Images/ahorcado3.png": "../Images/ahorcado2.png", // Par de imágenes 4 (inverso)
+};
+
+
+// Cargar las imágenes y convertirlas en datos de píxeles
+function loadImage(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "Anonymous"; // Permitir carga de imágenes desde otros dominios
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+    });
+}
+
+async function getImageData(url) {
+    const img = await loadImage(url);
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    return ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+// async function imagesAreEqual(url1, url2) {
+//     // const [data1, data2] = await Promise.all([getImageData(url1), getImageData(url2)]);
+//     // if (data1.width !== data2.width || data1.height !== data2.height) {
+//     //     return false;
+//     // }
+//     // for (let i = 0; i < data1.data.length; i++) {
+//     //     if (data1.data[i] !== data2.data[i]) {
+//     //         return false;
+//     //     }
+//     // }
+//     // return true;
+//     return imagePairs[url1] === url2 || imagePairs[url2] === url1;
+// }
+
+async function imagesAreEqual(url1, url2) {
+    return imagePairs[url1] === url2 || imagePairs[url2] === url1;
+}
+
 
 // Mezcla los elementos
 const shuffledItems = items.sort(() => Math.random() - 0.5);
 
 // Crear las cajas de juego
-shuffledItems.forEach(item => {
+const boxes = shuffledItems.map(async item => {
     let box = document.createElement('div');
     box.className = 'item';
     box.dataset.value = item; // Guardar la ruta de la imagen para comparación
@@ -23,42 +75,51 @@ shuffledItems.forEach(item => {
     // Insertar la imagen dentro del div
     box.appendChild(img);
 
-    // Funcionalidad al hacer clic en el box
-    box.onclick = function () {
-        if (!this.classList.contains('boxOpen') && document.querySelectorAll('.boxOpen').length < 2) {
-            this.classList.add('boxOpen');
-            this.querySelector('img').style.display = 'block'; // Mostrar la imagen al hacer clic
+    return box;
+});
 
-            let openBoxes = document.querySelectorAll('.boxOpen');
-            if (openBoxes.length === 2) {
-                let [firstBox, secondBox] = openBoxes;
+Promise.all(boxes).then(boxes => {
+    boxes.forEach(box => {
+        // Funcionalidad al hacer clic en el box
+        box.onclick = async function () {
+            if (!this.classList.contains('boxOpen') && document.querySelectorAll('.boxOpen').length < 2) {
+                this.classList.add('boxOpen');
+                this.querySelector('img').style.display = 'block'; // Mostrar la imagen al hacer clic
 
-                if (firstBox.dataset.value === secondBox.dataset.value) {
-                    // Marcar como pareja encontrada
-                    firstBox.classList.add('boxMatch');
-                    secondBox.classList.add('boxMatch');
+                let openBoxes = document.querySelectorAll('.boxOpen');
+                if (openBoxes.length === 2) {
+                    let [firstBox, secondBox] = openBoxes;
 
-                    // Limpiar las cajas abiertas
-                    firstBox.classList.remove('boxOpen');
-                    secondBox.classList.remove('boxOpen');
-                } else {
-                    // No es una pareja, cerrar las cajas después de un pequeño retraso
-                    setTimeout(() => {
+                    // Comparar las imágenes
+                    const areEqual = await imagesAreEqual(firstBox.dataset.value, secondBox.dataset.value);
+                    
+                    if (areEqual) {
+                        // Marcar como pareja encontrada
+                        firstBox.classList.add('boxMatch');
+                        secondBox.classList.add('boxMatch');
+
+                        // Limpiar las cajas abiertas
                         firstBox.classList.remove('boxOpen');
                         secondBox.classList.remove('boxOpen');
-                        firstBox.querySelector('img').style.display = 'none'; // Ocultar la imagen
-                        secondBox.querySelector('img').style.display = 'none'; // Ocultar la imagen
-                    }, 500);
+                    } else {
+                        // No es una pareja, cerrar las cajas después de un pequeño retraso
+                        setTimeout(() => {
+                            firstBox.classList.remove('boxOpen');
+                            secondBox.classList.remove('boxOpen');
+                            firstBox.querySelector('img').style.display = 'none'; // Ocultar la imagen
+                            secondBox.querySelector('img').style.display = 'none'; // Ocultar la imagen
+                        }, 500);
+                    }
+
+                    // Verificar si se han encontrado todas las parejas
+                    checkForWin();
                 }
-
-                // Verificar si se han encontrado todas las parejas
-                checkForWin();
             }
-        }
-    };
+        };
 
-    // Añadir el box a la sección del juego
-    document.querySelector('.game').appendChild(box);
+        // Añadir el box a la sección del juego
+        document.querySelector('.game').appendChild(box);
+    });
 });
 
 // Cerrar el modal al hacer clic en la "x"
@@ -82,7 +143,7 @@ function checkForWin() {
 }
 
 
-// Intenta iniciar la reproducción al hacer clic en la página
+// Funcion para musica de fondo
 document.body.addEventListener('click', function () {
     var audio = document.getElementById('background-music');
     audio.play().catch(function (error) {
