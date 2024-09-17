@@ -1,20 +1,26 @@
 const items = [
-    "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
-    "../Images/ahorcado0.png", "../Images/ahorcado1.png",
-    "../Images/ahorcado2.png", "../Images/ahorcado3.png",
-    "../Images/ahorcado4.png", "../Images/ahorcado5.png",
-    "../Images/pruebita.jpg", "../Images/pruebita2.jpg",
+    "../Images/CardsImages/BienComun.png", "../Images/CardsImages/BienComunImagen.png",
+    "../Images/CardsImages/DestinoUniversal.png", "../Images/CardsImages/DestinoImagen.png",
+    "../Images/CardsImages/Participacion.png", "../Images/CardsImages/ParticipacionImagen.png",
+    "../Images/CardsImages/Solidaridad.png", "../Images/CardsImages/SolidaridadImagen.png",
+    "../Images/CardsImages/Subsidiaridad.png", "../Images/CardsImages/SubsidiaridadImagen.png",
+    "../Images/CardsImages/Valores.png", "../Images/CardsImages/ValoresImagen.png",
 ];
 
 const imagePairs = {
-    "../Images/pruebita.jpg": "../Images/pruebita2.jpg", // Par de imágenes 1
-    "../Images/pruebita2.jpg": "../Images/pruebita.jpg", // Par de imágenes 2 (inverso)
-    "../Images/ahorcado0.png": "../Images/ahorcado1.png", // Par de imágenes 3
-    "../Images/ahorcado1.png": "../Images/ahorcado0.png", // Par de imágenes 4 (inverso)
-    "../Images/ahorcado2.png": "../Images/ahorcado3.png", // Par de imágenes 4 (inverso)
-    "../Images/ahorcado3.png": "../Images/ahorcado2.png", // Par de imágenes 4 (inverso)
-    "../Images/ahorcado4.png": "../Images/ahorcado5.png", // Par de imágenes 4 (inverso)
-    "../Images/ahorcado5.png": "../Images/ahorcado4.png", // Par de imágenes 4 (inverso)
+    // -- Bien común --
+    "../Images/CardsImages/BienComun.png": "../Images/CardsImages/BienComunImagen.png",
+    "../Images/CardsImages/BienComunImagen.png": "../Images/CardsImages/BienComun.png", 
+    // -- Destino universal --
+    "../Images/CardsImages/DestinoUniversal.png": "../Images/CardsImages/DestinoImagen.png", 
+    "../Images/CardsImages/DestinoImagen.png": "../Images/CardsImages/DestinoUniversal.png",
+    // -- Participación --
+    "../Images/CardsImages/Participacion.png": "../Images/CardsImages/ParticipacionImagen.png", 
+    "../Images/CardsImages/ParticipacionImagen.png": "../Images/CardsImages/Participacion.png", 
+    // -- Solidaridad --
+    "../Images/CardsImages/Solidaridad.png": "../Images/CardsImages/SolidaridadImagen.png", 
+    "../Images/CardsImages/SolidaridadImagen.png": "../Images/CardsImages/Solidaridad.png", 
+    
 };
 
 
