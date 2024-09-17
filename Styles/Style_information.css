@@ -1,4 +1,17 @@
 /* Elementos y clases de la pagina */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+@font-face {
+    font-family: mifuente2;
+    src: url('../Fuentes/Happy\ Paradise.otf');
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .container {
     position: relative;
     display: flex;
@@ -41,6 +54,7 @@ h3 {
 }
 
 h2 {
+    font-family: mifuente2;
     font-size: 3rem;
     color: #fff;
     text-transform: uppercase;
@@ -134,20 +148,25 @@ body {
 
 /* Cambia el estilo de la barra de desplazamiento */
 ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
+    width: 12px;
+    /* Ancho de la barra de desplazamiento */
 }
 
 /* Cambia el color de la pista de la barra de desplazamiento (fondo) */
 ::-webkit-scrollbar-track {
-    background: rgb(218, 218, 218); /* Color de fondo */
+    background: rgb(218, 218, 218);
+    /* Color de fondo */
     border-radius: 10px;
 }
 
 /* Cambia el color de la barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
-    background-color: #b86be3; /* Color de la barra */
-    border-radius: 10px; /* Redondea los bordes de la barra */
-    border: 2px solid transparent; /* Borde alrededor de la barra */
+    background-color: #b86be3;
+    /* Color de la barra */
+    border-radius: 10px;
+    /* Redondea los bordes de la barra */
+    border: 2px solid transparent;
+    /* Borde alrededor de la barra */
 }
 
 /* Cambia el color cuando se pasa el mouse por encima de la barra */
