@@ -1,6 +1,6 @@
 const items = [
     "../Images/CardsImages/BienComun.png", "../Images/CardsImages/BienComunImagen.png",
-    "../Images/CardsImages/DestinoUniversal.png", "../Images/CardsImages/DestinoImagen.png",
+    "../Images/CardsImages/DestinoUniveral.png", "../Images/CardsImages/DestinoImagen.png",
     "../Images/CardsImages/Participacion.png", "../Images/CardsImages/ParticipacionImagen.png",
     "../Images/CardsImages/Solidaridad.png", "../Images/CardsImages/SolidaridadImagen.png",
     "../Images/CardsImages/Subsidiaridad.png", "../Images/CardsImages/SubsidiaridadImagen.png",
@@ -12,14 +12,20 @@ const imagePairs = {
     "../Images/CardsImages/BienComun.png": "../Images/CardsImages/BienComunImagen.png",
     "../Images/CardsImages/BienComunImagen.png": "../Images/CardsImages/BienComun.png", 
     // -- Destino universal --
-    "../Images/CardsImages/DestinoUniversal.png": "../Images/CardsImages/DestinoImagen.png", 
-    "../Images/CardsImages/DestinoImagen.png": "../Images/CardsImages/DestinoUniversal.png",
+    "../Images/CardsImages/DestinoUniveral.png": "../Images/CardsImages/DestinoImagen.png", 
+    "../Images/CardsImages/DestinoImagen.png": "../Images/CardsImages/DestinoUniveral.png",
     // -- Participación --
     "../Images/CardsImages/Participacion.png": "../Images/CardsImages/ParticipacionImagen.png", 
     "../Images/CardsImages/ParticipacionImagen.png": "../Images/CardsImages/Participacion.png", 
     // -- Solidaridad --
     "../Images/CardsImages/Solidaridad.png": "../Images/CardsImages/SolidaridadImagen.png", 
     "../Images/CardsImages/SolidaridadImagen.png": "../Images/CardsImages/Solidaridad.png", 
+    // -- Subsidiaridad --
+    "../Images/CardsImages/Subsidiaridad.png": "../Images/CardsImages/SubsidiaridadImagen.png", 
+    "../Images/CardsImages/SubsidiaridadImagen.png": "../Images/CardsImages/Subsidiaridad.png", 
+    // -- Valores --
+    "../Images/CardsImages/Valores.png": "../Images/CardsImages/ValoresImagen.png", 
+    "../Images/CardsImages/ValoresImagen.png": "../Images/CardsImages/Valores.png", 
     
 };
 
@@ -148,6 +154,11 @@ function checkForWin() {
     if (document.querySelectorAll('.boxMatch').length === items.length) {
         // Mostrar el modal al ganar
         document.getElementById("winModal").style.display = "block";
+
+        // Reproducir el sonido de victoria
+        const winAudio = document.getElementById("winAudio");
+        winAudio.volume = 0.8; // Ajustar el volumen al 50%
+        winAudio.play();
     }
 }
 
