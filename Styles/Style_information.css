@@ -1,3 +1,4 @@
+/* Elementos y clases de la pagina */
 .container {
     position: relative;
     display: flex;
@@ -12,7 +13,7 @@
 
 .containerInfo {
     margin-top: 20px;
-    background: #ffffff65;
+    background: #bebebe63;
     padding: 40px 60px;
     border-radius: 20px;
 }
@@ -55,7 +56,7 @@ body {
     margin: 100;
 }
 
-
+/* Boton */
 .reset {
     cursor: pointer;
     position: relative;
@@ -98,7 +99,7 @@ body {
     scale: 1;
 }
 
-
+/* Estilo para el fondo */
 .bg {
     animation: slide 3s ease-in-out infinite alternate;
     background-image: linear-gradient(-60deg, rgba(186, 27, 218, 0.89) 50%, rgba(226, 81, 255, 0.726) 50%);
@@ -131,3 +132,25 @@ body {
 }
 
 
+/* Cambia el estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Cambia el color de la pista de la barra de desplazamiento (fondo) */
+::-webkit-scrollbar-track {
+    background: rgb(218, 218, 218); /* Color de fondo */
+    border-radius: 10px;
+}
+
+/* Cambia el color de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background-color: #b86be3; /* Color de la barra */
+    border-radius: 10px; /* Redondea los bordes de la barra */
+    border: 2px solid transparent; /* Borde alrededor de la barra */
+}
+
+/* Cambia el color cuando se pasa el mouse por encima de la barra */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9236a1;
+}
