@@ -10,7 +10,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #085e6da2;
+    background-image: linear-gradient(#00000000, #00000000),
+    url('https://img.freepik.com/vector-premium/diseno-fondo-dibujos-abstractos-planos_921039-23586.jpg');
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el fondo */
 }
 
 .container {
@@ -20,18 +24,25 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    background: #085e6d83;
+    background: #ff6ae6c7;
     padding: 40px 60px;
     border-radius: 10px;
+    border: solid 2px black;
 }
 
 h2 {
     font-size: 3rem;
-    color: #fff;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-
+@font-face {
+    font-family: mifuente2;
+    src: url('../Fuentes/Happy\ Paradise.otf');
+ }
+ h2{
+    font-family: mifuente2;
+ }
 
 /* From Uiverse.io by gharsh11032000 */
 .reset {
@@ -39,8 +50,8 @@ h2 {
     position: relative;
     padding: 10px 24px;
     font-size: 18px;
-    color: rgb(0, 44, 85);
-    border: 2px solid rgb(0, 44, 85);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 34px;
     background-color: transparent;
     font-weight: 600;
@@ -58,7 +69,7 @@ h2 {
     border-radius: inherit;
     scale: 0;
     z-index: -1;
-    background-color: rgb(0, 44, 85);
+    background-color: rgb(255, 3, 255);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
@@ -110,12 +121,12 @@ h2 {
     content: '';
     position: absolute;
     inset: 0;
-    background: #085e6d;
+    background: #ff69ff;
     transition: 0.25;
     backface-visibility: hidden;
     transform: rotateY(0deg);
-    box-shadow: 15px 15px 30px #006e81cc,
-        -15px -15px 30px #019bb6cc;
+    box-shadow: 15px 15px 30px #a70692de,
+        -15px -15px 30px #c002a7cc;
     transition: 0.2s ease-in-out;
     border-radius: 10px;
 }
@@ -168,3 +179,29 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+.reset2 {
+    background-color: rgb(225, 158, 238);
+    border-radius: 30px;
+    padding: 15px;
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    top: 240px; 
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición */
+}
+
+.reset2:hover {
+    background-color: rgba(223, 61, 255, 0.7); /* Color difuminado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+@font-face {
+    font-family: mifuente;
+    src: url('../Fuentes/Anti\ Gravity\ Demo.ttf');
+ }
+ h3{
+    font-family: mifuente;
+ }
+ 
