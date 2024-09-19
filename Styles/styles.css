@@ -621,6 +621,16 @@ html {
 	position: relative;
 	overflow: hidden;
 }
+.contenedor {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+}
+
+.img4 {
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+}
 
 .button-group-blog {
 	position: absolute;
