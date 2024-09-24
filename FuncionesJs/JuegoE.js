@@ -73,14 +73,14 @@ function play(){
         bird_dy = bird_dy + grativy;
         document.addEventListener('keydown', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
-                img.src = '../Images/Bird-2.png';
+                img.src = '../Images/kirby2.png';
                 bird_dy = -7.6;
             }
         });
 
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
-                img.src = '../Images/Bird.png';
+                img.src = '../Images/kirby2.png';
             }
         });
 
@@ -127,3 +127,10 @@ function play(){
     }
     requestAnimationFrame(create_pipe);
 }
+// Funcion para musica de fondo
+document.body.addEventListener('click', function () {
+    var audio = document.getElementById('background-music');
+    audio.play().catch(function (error) {
+        console.error('Error al intentar reproducir el audio:', error);
+    });
+});

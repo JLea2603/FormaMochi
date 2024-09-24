@@ -10,14 +10,31 @@
     <script src="../FuncionesJs/JuegoE.js" defer></script>
 </head>
 <body>
-    <div class="background"></div>
-    <img src="../Images/Bird.png" alt="bird-img" class="bird" id="bird-1">
+    
+    <div class="background">
+        <a href="Home.html"><button class="reset"><h2>Regresar al menu</h2></button></a></div>
+    <img src="../Images/kirby2.png" alt="bird-img" class="bird" id="bird-1">
     <div class="message">
         Enter To Start Game <p><span style="color: red;">&uarr;</span> ArrowUp to Control</p>
     </div>
+    
     <div class="score">
         <span class="score_title"></span>
         <span class="score_val"></span>
     </div>
+    <audio id="background-music" src="../sounds/pokemon.mp3" loop></audio>
+    <p>Tu navegador no soporta el elemento de audio.</p>
+    
+    <script>
+        document.body.addEventListener('keydown', function (event) {
+    // Verifica si la tecla presionada es "Enter"
+    if (event.key === 'Enter') {
+        var audio = document.getElementById('background-music');
+        audio.play().catch(function (error) {
+            console.error('Error al intentar reproducir el audio:', error);
+        });
+    }
+});
+    </script>
 </body>
 </html>

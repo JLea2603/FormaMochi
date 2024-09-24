@@ -7,7 +7,7 @@
 .background {
 	height: 100vh;
 	width: 100vw;
-	background: url('../Images/background-img.png') no-repeat center center fixed;
+	background: url('../Images/atardeeee.jpeg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,7 +27,8 @@
 	left: 100vw;
 	height: 70vh;
 	width: 6vw;
-	background:radial-gradient(lightgreen 50%, green);
+	background:radial-gradient(rgb(168, 100, 68) 50%, rgb(85, 42, 1));
+	border-radius: 50px;
 	border: 5px solid black;
 }
 .message {
@@ -81,3 +82,33 @@
 		width: 14vw;
 	}
 }
+.reset {
+    background-color: rgb(225, 158, 238);
+    border-radius: 30px;
+    padding: 15px;
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    top: 240px; 
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición */
+}
+
+.reset:hover {
+    background-color: rgba(223, 61, 255, 0.7); /* Color difuminado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+ @font-face {
+    font-family: mifuente2;
+    src: url('../Fuentes/Happy\ Paradise.otf');
+ }
+ h2{
+    font-family: mifuente2;
+ }
+ @font-face {
+    font-family: mifuente;
+    src: url('../Fuentes/Anti\ Gravity\ Demo.ttf');
+ }
+ h1{
+    font-family: mifuente;
+ }
