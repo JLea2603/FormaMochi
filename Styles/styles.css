@@ -335,6 +335,13 @@ html {
 	background-position: center;
 	background-repeat: no-repeat;
 }
+.category-extra {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('https://img.freepik.com/vector-gratis/dibujos-animados-aves-voladoras-cielo-nubes-sol-ilustracion_1284-51983.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 
 .category-expreso {
 	background-image: linear-gradient(#00000080, #00000080),
@@ -343,6 +350,7 @@ html {
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
 
 .card-category p {
 	font-size: 2.5rem;
@@ -688,6 +696,7 @@ html {
 	font-size: 1.4rem;
 	color: #777;
 }
+
 
 .content-blog span {
 	color: var(--primary-color);
@@ -1092,4 +1101,20 @@ html {
  
  h2{
     font-family: mifuente2;
- }
+ }.contenedorvd {
+    background-color: #833ab4;
+    width: 90%;
+    height: 450px; /* Adjust height as needed */
+    margin-left: 80px;
+    border-radius: 60px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between videos */
+    align-items: center; /* Center items vertically */
+}
+
+.VideoDSI, .VideoDSI2 {
+    width: 40%; /* Set both videos to take up nearly half of the container */
+    height: 400px; /* Keep height consistent */
+    border-radius: 30px;
+	
+}
