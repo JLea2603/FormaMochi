@@ -350,6 +350,14 @@ html {
 	background-position: center;
 	background-repeat: no-repeat;
 }
+.category-trivia {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('https://img.freepik.com/vector-premium/jovenes-inteligentes-jugando-concurso-concurso-ilustracion-dibujos-animados_53562-6465.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 
 
 .card-category p {
